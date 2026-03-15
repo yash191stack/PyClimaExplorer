@@ -1,0 +1,372 @@
+/* Base Bright & Colorful Theme */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif !important;
+    color: #1e293b; /* Dark slate text for readability */
+}
+
+/* Stunning Bright Background */
+.stApp {
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(at 10% 20%, hsla(210,100%,95%,1) 0, transparent 40%), 
+        radial-gradient(at 80% 10%, hsla(280,100%,95%,1) 0, transparent 40%),
+        radial-gradient(at 40% 80%, hsla(160,100%,92%,1) 0, transparent 40%),
+        radial-gradient(at 90% 90%, hsla(340,100%,95%,1) 0, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Hide Streamlit Default Header & Reduce Top Padding */
+header[data-testid="stHeader"] {
+    display: none !important;
+}
+
+[data-testid="stAppViewBlockContainer"] {
+    padding-top: 2rem !important;
+}
+
+/* Sidebar Styling - Soft vibrant glass */
+section[data-testid="stSidebar"] {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.02);
+}
+section[data-testid="stSidebar"] [class*="css"] {
+    color: #334155 !important;
+}
+
+/* Animated Title Gradient - Vibrant Red/Orange/Pink */
+h1 {
+    background: linear-gradient(120deg, #ff007f, #ff8c00, #ff007f);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+}
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+h2, h3, h4 {
+    color: #0f172a;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+/* Buttons - Colorful Gradient */
+.stButton > button {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white !important;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 4px 14px 0 rgba(168, 85, 247, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+}
+
+/* Tabs Styling - White Pill Design */
+[data-baseweb="tab-list"] {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 14px !important;
+    padding: 6px;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+[data-baseweb="tab"] {
+    background: transparent !important;
+    border-radius: 10px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    color: #64748b !important;
+    border: none !important;
+    font-weight: 600;
+}
+
+[aria-selected="true"] {
+    background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Metric Cards & Generic Containers */
+[data-testid="metric-container"], .story-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 1) !important;
+    border-radius: 20px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+[data-testid="metric-container"] label {
+    color: #64748b !important;
+    font-weight: 600 !important;
+}
+[data-testid="metric-container"] div[data-testid="stMetricValue"] {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+}
+
+[data-testid="metric-container"]:hover, .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.15);
+}
+
+/* Plotly Chart Containers */
+.element-container [data-testid="stPlotlyChart"] {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+}
+
+/* AI Insight Box - Colorful and bright */
+.insight-box {
+    background: linear-gradient(135deg, rgba(254, 240, 138, 0.6), rgba(167, 243, 208, 0.6), rgba(191, 219, 254, 0.6));
+    border-left: 5px solid #3b82f6;
+    padding: 1.25rem 2rem;
+    border-radius: 0 16px 16px 0;
+    margin: 1.5rem 0;
+    font-size: 1.15rem;
+    color: #1e293b;
+    line-height: 1.6;
+    animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Badges */
+.info-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+    border: 1px solid #bae6fd;
+    color: #0284c7;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.1);
+}
+
+.info-badge:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 15px rgba(2, 132, 199, 0.2);
+    background: linear-gradient(135deg, #bae6fd, #bfdbfe);
+}
+
+/* Inputs and Sliders */
+[data-testid="stWidgetLabel"] p {
+    font-weight: 600 !important;
+    color: #475569 !important;
+}
+
+/* Horizontal Dividers */
+hr {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    margin: 2.5em 0 !important;
+}
+
+/* Checkbox and Radio items */
+.stRadio > div {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* Story Card specific tweaks */
+.story-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: linear-gradient(90deg, #f43f5e, #8b5cf6, #3b82f6, #10b981);
+    background-size: 300% 100%;
+    animation: shimmer 4s infinite linear;
+}
+
+/* Overriding Plotly default dark mode colors that might leak through */
+.js-plotly-plot .plotly .main-svg {
+    border-radius: 12px;
+}
+
+/* Navbar */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 15px 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    background: linear-gradient(120deg, #ff007f, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    color: #3b82f6;
+}
+
+.nav-link.active {
+    color: #3b82f6;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 2px;
+}
+
+.button-link {
+    background: #0f172a;
+    color: white !important;
+    padding: 6px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.button-link:hover {
+    background: #334155;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+.hero-section p {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========================================================================= */
+/* Layout & Alignment Fixes                                                  */
+/* ========================================================================= */
+
+/* Fix 1: Properly display Streamlit's block container so the navbar shows */
+.block-container {
+    max-width: 1400px;
+    padding-top: 1rem !important;
+    padding-right: 2rem !important;
+    padding-left: 2rem !important;
+    padding-bottom: 3rem !important;
+    margin: 0 auto;
+}
+
+/* Fix 2: Force the Navbar to be visible and correctly aligned */
+.top-navbar {
+    position: relative; /* Streamlit sometimes clips absolute/fixed without paddings */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 25px auto;
+    z-index: 999;
+}
+
+/* Fix 3: Ensure components wrap and align on large displays */
+.stColumn {
+    padding: 0 10px;
+}
+
+/* Fix 4: Give Insight box the same width styling */
+.insight-box {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Fix 5: Hero banner title spacing */
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0px;
+}
+.hero-section p {
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+/* Fix 6: Enhanced Pulse UI Animations */
+[data-testid="metric-container"] {
+    position: relative;
+    overflow: hidden;
+}
+
+[data-testid="metric-container"]::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s, transform 0.5s;
+    pointer-events: none;
+}
+
+[data-testid="metric-container"]:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.insight-box {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    animation: glow-pulse 3s infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.2); }
+    100% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
+}
+
+/* Pulsing Badge Effect */
+.info-badge {
+    animation: bounce-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+

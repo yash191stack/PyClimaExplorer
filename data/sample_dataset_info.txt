@@ -1,0 +1,69 @@
+====================================================
+ PyClimaExplorer – Sample Dataset Information
+====================================================
+
+This folder is the recommended place to store your .nc (NetCDF) climate datasets.
+
+-----------------------------------------------------------
+RECOMMENDED FREE DATASETS
+-----------------------------------------------------------
+
+1. ERA5 Reanalysis (ECMWF)
+   URL  : https://cds.climate.copernicus.eu/
+   Notes: Requires free CDS account. Download via the CDS API or the web form.
+          Variables: 2m temperature, total precipitation, 10m u/v wind, etc.
+          Resolution: 0.25° x 0.25° global, hourly / monthly.
+   
+   Quick download with cdsapi:
+     pip install cdsapi
+     # Then create ~/.cdsapirc with your API key (instructions on CDS site)
+     python -c "
+     import cdsapi
+     c = cdsapi.Client()
+     c.retrieve('reanalysis-era5-single-levels-monthly-means', {
+         'product_type': 'monthly_averaged_reanalysis',
+         'variable': '2m_temperature',
+         'year': ['2020','2021','2022'],
+         'month': [str(m).zfill(2) for m in range(1,13)],
+         'time': '00:00',
+         'format': 'netcdf',
+     }, 'era5_t2m.nc')
+     "
+
+2. CESM2 (Community Earth System Model)
+   URL  : https://www.earthsystemgrid.org/
+   Notes: Large model output, requires registration.
+          Variables: TS (surface temperature), PRECT (precipitation), U/V (wind).
+
+3. NOAA NCEI – Small Sample Files
+   URL  : https://www.ncei.noaa.gov/thredds/catalog.html
+   Notes: No registration required for many products.
+          Good for quick testing. Look for GHCN or OISST datasets.
+
+4. Copernicus Open Data – Climate Change Service
+   URL  : https://cds.climate.copernicus.eu/datasets
+   Notes: Many datasets freely available after registration.
+
+5. OpenDAP / THREDDS Servers (direct NetCDF streaming)
+   Example (NOAA SST):
+     import xarray as xr
+     ds = xr.open_dataset(
+         "https://psl.noaa.gov/thredds/dodsC/Datasets/noaa.ersst.v5/sst.mnmean.nc"
+     )
+     ds.to_netcdf("data/sst_ersst5.nc")
+
+-----------------------------------------------------------
+TINY TEST DATASET (generated in-app)
+-----------------------------------------------------------
+PyClimaExplorer includes a built-in synthetic dataset generator for
+quick testing without downloading any files. Just launch the app and
+click "Use sample synthetic data" in the sidebar.
+
+-----------------------------------------------------------
+FILE NAMING CONVENTION (recommended)
+-----------------------------------------------------------
+  era5_t2m_2020_2022.nc
+  cesm_prect_1980_2000.nc
+  noaa_sst_mnmean.nc
+
+====================================================
