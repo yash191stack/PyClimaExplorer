@@ -17,9 +17,9 @@ html, body, [class*="css"] {
     background-attachment: fixed;
 }
 
-/* Hide Streamlit Default Header & Reduce Top Padding */
+/* Hide Streamlit Default Header Background but keep toggle visible */
 header[data-testid="stHeader"] {
-    display: none !important;
+    background: transparent !important;
 }
 
 [data-testid="stAppViewBlockContainer"] {
