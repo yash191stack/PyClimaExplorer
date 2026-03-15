@@ -134,7 +134,7 @@ st.markdown("""
         <a href="#" class="nav-link active">Dashboard</a>
         <a href="#" class="nav-link">Analytics</a>
         <a href="#" class="nav-link">Documentation</a>
-        <a href="https://github.com" target="_blank" class="nav-link button-link">GitHub</a>
+        <a href="https://github.com/yash191stack/PyClimaExplorer" target="_blank" class="nav-link button-link">GitHub</a>
     </div>
 </div>
 """, unsafe_allow_html=True)
