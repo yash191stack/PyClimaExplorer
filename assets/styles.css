@@ -22,6 +22,11 @@ header[data-testid="stHeader"] {
     background: transparent !important;
 }
 
+/* Hide Deploy/Workspace Button but keep Theme & Starred visible */
+[data-testid="stDeployButton"] {
+    display: none !important;
+}
+
 [data-testid="stAppViewBlockContainer"] {
     padding-top: 2rem !important;
 }
