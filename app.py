@@ -131,9 +131,8 @@ st.markdown("""
 <div class="top-navbar">
     <div class="nav-logo">🌍 PyClimaExplorer</div>
     <div class="nav-links">
-        <a href="#" class="nav-link active">Dashboard</a>
-        <a href="#" class="nav-link">Analytics</a>
-        <a href="#" class="nav-link">Documentation</a>
+        <a href="/" class="nav-link active" target="_self">Dashboard</a>
+        <a href="#mode-selection" class="nav-link" target="_self">Analytics</a>
         <a href="https://github.com/yash191stack/PyClimaExplorer" target="_blank" class="nav-link button-link">GitHub</a>
     </div>
 </div>
